@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KnowYourCarrier</title>
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow">
+    <div class="container">
+      <a class="navbar-brand fw-bold fs-4" href="#">KnowYourCarrier</a>
+    </div>
+  </nav>
+
+  <!-- Initial Screen -->
+  <section id="choice-screen" class="d-flex align-items-center justify-content-center vh-100">
+    <div class="text-center">
+      <h1 class="mb-4 fw-bold">Choose Your Path</h1>
+      <div class="d-flex justify-content-center gap-5">
+        <div class="card option-card" onclick="showTree('tech')">
+          <div class="card-body">
+            <h3 class="fw-bold text-primary">Tech</h3>
+          </div>
+        </div>
+        <div class="card option-card" onclick="showTree('nontech')">
+          <div class="card-body">
+            <h3 class="fw-bold text-success">Non-Tech</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tree Section -->
+  <section id="tree-section" class="container py-5 d-none">
+    <button class="btn btn-secondary mb-3" onclick="backToChoice()">⬅ Back</button>
+    <h2 id="tree-title" class="text-center fw-bold mb-4"></h2>
+    <div id="tree-container" class="tree d-flex justify-content-center"></div>
+  </section>
+
+  <!-- Career Overlay -->
+  <div id="career-overlay" class="career-overlay d-none" role="dialog" aria-modal="true" aria-labelledby="overlay-title">
+    <div class="overlay-container">
+      <div class="overlay-salary" id="overlay-salary">
+        <h4 class="mb-3" id="overlay-salary-title">Salary</h4>
+        <div id="overlay-salary-content" class="text-muted">Select a skill to view salary.</div>
+      </div>
+      <div class="overlay-card" id="overlay-card">
+        <div class="d-flex justify-content-between align-items-start">
+          <h3 class="h5 mb-3" id="overlay-title"></h3>
+          <button type="button" class="btn btn-sm btn-outline-secondary" id="overlay-close" aria-label="Close"><i class="bi bi-x-lg"></i></button>
+        </div>
+        <div id="overlay-body"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
